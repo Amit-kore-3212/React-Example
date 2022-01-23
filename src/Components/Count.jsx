@@ -1,37 +1,32 @@
-//jsx means javascript XML: it enables us to use html inside an react
-//1 : component name should start with capital letter
-//2: it should return jsx : Javscript XML
-//useEffect : hook it will be called depend upon dependencies
-//flow of react:
-//virtual DOM : document object Module
+import React, { useState } from "react";
 
-import React, { useState, useEffect } from "react";
-//useState : local state
-//setCount
-function Count() {
-  const [name, setName] = useState("amit"); //tima
+const Count = () => {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState(["amit"]);
 
-  const handleClick = () => {
-    setName("amit");
+  const handleIncrement = () => {
+    setCount(count + 1);
   };
 
-  useEffect(() => {
-    setName("srini");
-    console.log("This is an useEefect");
-  }, []);
+  const handleDecrement = () => {
+    setCount(count - 1);
+  };
+
+  const handleReset = () => {
+    setCount(0);
+  };
 
   return (
     <div>
-      <h3>Reversed Name -{name}</h3>
-
-      <button onClick={handleClick}>Change Name</button>
+      <h3>Count - {count}</h3>
+      <h3>Name - {name.designation}</h3>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
-}
+};
 
 export default Count;
-//div acts as a container
-//class based components
-//function based components
-//React hooks
-//useState , useEffect , useRef
+//react hooks : useState , useEffect , useREf
+//useSatte : it allows us to have state variable in a function component
