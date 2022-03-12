@@ -1,29 +1,74 @@
-.button {
-  background-color: #0072ff;
+button {
+  background-color: #328eff;
+  height: 30px;
+  width: 150px;
   border: 1px solid #0072ff;
-  width: 100px;
-  height: 30px;
-  border-radius: 5px;
-  color: white;
-}
-.button1 {
-  background-color: #2b2c2b;
-  border: 1px solid #2b2c2b;
-  width: 100px;
-  height: 30px;
-  border-radius: 5px;
-  color: white;
+  border-radius: 15px;
+  color: #ffffff;
 }
 
-.div {
+.container {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-.space {
-  padding-left: 20px;
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 20px;
 }
-.space1 {
-  padding-right: 20px;
+
+h3 {
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: rgb(129, 43, 50);
+}
+
+.tableConatiner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+table,
+th {
+  border: 1px solid #232a35;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+thead {
+  background-color: #155cce;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+tbody {
+  background-color: aquamarine;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #155cce;
+}
+tbody button {
+  background-color: #0072ff;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #0072ff;
+  border-radius: 10px;
+}
+
+td {
+  height: 40px;
+}
+
+.appHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
 }

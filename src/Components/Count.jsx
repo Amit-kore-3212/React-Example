@@ -1,32 +1,58 @@
 import React, { useState } from "react";
+import "../App.css";
+import { connect } from "react-redux";
+import {
+  incrementAction,
+  decrementAction,
+  resetAction,
+} from "../Actions/count";
 
-const Count = () => {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState(["amit"]);
-
+//useState : we can store data locally
+const Count = (props) => {
   const handleIncrement = () => {
-    setCount(count + 1);
+    props.dispatch(incrementAction());
   };
 
   const handleDecrement = () => {
-    setCount(count - 1);
+    props.dispatch(decrementAction());
   };
 
   const handleReset = () => {
-    setCount(0);
+    props.dispatch(resetAction());
   };
 
   return (
-    <div>
-      <h3>Count - {count}</h3>
-      <h3>Name - {name.designation}</h3>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
-      <button onClick={handleReset}>Reset</button>
+    <div className="container">
+      <div className="buttonContainer">
+        <div>
+          <button className="button" onClick={handleIncrement}>
+            Increment
+          </button>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div>
+            <button className="button" onClick={handleDecrement}>
+              Decrement
+            </button>
+          </div>
+          <div style={{ paddingLeft: "10px" }}>{props.count}</div>
+        </div>
+        <div>
+          <button className="button" onClick={handleReset}>
+            Reset
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Count;
-//react hooks : useState , useEffect , useREf
-//useSatte : it allows us to have state variable in a function component
+const mapStateToProps = (state) => {
+  return {
+    count: state.count,
+  };
+};
+
+export default connect(mapStateToProps)(Count);
+//redux mobx relay's
+//redux is a global object

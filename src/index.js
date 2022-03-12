@@ -1,21 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { Provider } from "react-redux";
+import { Provider } from "react-redux";
 import App from "./App";
-// import configureStore from "./Store/configureStore";
+import configureStore from "./Store/store";
 
-// const store = configureStore();
+const store = configureStore();
 
-// store.subscribe(() => {
-//   console.log("store", store.getState());
-// });
+store.subscribe(() => {
+  console.log("store", store.getState());
+});
 
-// const jsx = (
-//   <Provider store={store}>
-//     <App />
-//   </Provider>
-// );
+const jsx = (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
-//provider makes the redux store availabel for all the nested componnet
+ReactDOM.render(jsx, document.getElementById("root"));
+//actions are nothing but functions which has the information what needs to be with the store
+//type : what needs to be done to the store
+//reducers these are again functions which accepts previous state and an action logic happens it returns a new State
+//input return dispatch   output

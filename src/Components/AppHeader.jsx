@@ -1,31 +1,29 @@
-import React from "react";
-import { BsFillGridFill } from "react-icons/bs";
-import {
-  AiFillBank,
-  AiFillHtml5,
-  AiFillMessage,
-  AiOutlineAlipayCircle,
-  AiFillTwitterSquare,
-} from "react-icons/ai";
+import React, { useEffect } from "react";
+import { Box, Grid } from "@material-ui/core";
+import { connect } from "react-redux";
+import { getData } from "../Actions/fetachAction";
 
-export const AppHeader = () => {
-    
+const AppHeader = (props) => {
+  useEffect(() => {
+    props.dispatch(getData());
+  }, []);
+
   return (
-    <div>
-      <div>
-        <BsFillGridFill />
-        <AiFillBank />
-        <h3>Gmail</h3>
-      </div>
-      <div>
-        <input />
-      </div>
-      <div>
-        <AiFillHtml5 />
-        <AiFillMessage />
-        <AiOutlineAlipayCircle />
-        <AiFillTwitterSquare />
-      </div>
-    </div>
+    <Box>
+      <ul>
+        {props.data.map((ele) => (
+          <li key={ele.id}>
+            {ele.email} - {ele.name}
+          </li>
+        ))}
+      </ul>
+    </Box>
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+  };
+};
+export default connect(mapStateToProps)(AppHeader);
