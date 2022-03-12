@@ -6,6 +6,7 @@ import { getData } from "../Actions/fetachAction";
 const AppHeader = (props) => {
   useEffect(() => {
     props.dispatch(getData());
+    console.log("amit");
   }, []);
 
   return (
