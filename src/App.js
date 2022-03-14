@@ -8,26 +8,19 @@ import { Post } from "./Components/Post";
 import { Login } from "./Components/Login";
 import "./App.css";
 import AppHeader from "./Components/AppHeader";
+import { Tasks } from "./Components/Tasks";
+import { Task } from "./Components/Task";
+import { UpdateTask } from "./Components/TaskUpdate";
 
 function App(props) {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<SignUp />} />
-    //     <Route path="/info" element={<Info />} />
-    //     <Route path="/count" element={<Count />} />
-    //     <Route path="/request" element={<Request />} />
-    //     <Route path="/request/:id" element={<Post />} />
-    //     <Route path="/appHeader" element={<AppHeader />} />
-    //   </Routes>
-    // </BrowserRouter>
-    <div>
-      {/* <Count />
-      <Info /> */}
-      {/* <AppHeader /> */}
-      {/* <WithBackEnd /> */}
-      <h3>Amit</h3>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Tasks />} />
+        <Route path="/new" element={<Task />} />
+        <Route path="/task/:id" element={<UpdateTask />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

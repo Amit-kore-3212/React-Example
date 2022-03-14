@@ -5,6 +5,7 @@ button {
   border: 1px solid #0072ff;
   border-radius: 15px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .container {
@@ -71,4 +72,11 @@ td {
   width: 100%;
   align-items: center;
   justify-content: space-around;
+}
+
+p {
+  font-weight: 600;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: #b82e2e;
 }
