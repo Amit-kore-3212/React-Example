@@ -1,40 +1,4 @@
-button {
-  background-color: #328eff;
-  height: 30px;
-  width: 150px;
-  border: 1px solid #0072ff;
-  border-radius: 15px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-
-.buttonContainer {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  padding-top: 20px;
-}
-
-h3 {
-  font-size: 16px;
-  font-family: sans-serif;
-  font-weight: 700;
-  color: rgb(129, 43, 50);
-}
-
-.tableConatiner {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-
-table,
+/* table,
 th {
   border: 1px solid #232a35;
   width: 100%;
@@ -65,18 +29,4 @@ tbody button {
 
 td {
   height: 40px;
-}
-
-.appHeader {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
-}
-
-p {
-  font-weight: 600;
-  font-size: 14px;
-  font-family: sans-serif;
-  color: #b82e2e;
-}
+}  */

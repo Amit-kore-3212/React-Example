@@ -1,40 +1,60 @@
-import React from "react";
-import Count from "./Components/Count";
-import Info from "./Components/Info";
-import { SignUp } from "./Components/SignUp";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { Request } from "./Components/RequestToBackEnd";
-import { Post } from "./Components/Post";
-import { Login } from "./Components/Login";
-import "./App.css";
-import AppHeader from "./Components/AppHeader";
-import { Tasks } from "./Components/Tasks";
-import { Task } from "./Components/Task";
-import { UpdateTask } from "./Components/TaskUpdate";
+import React, { useState } from "react";
+import Count from "./New-Components/Count";
+import Info from "./New-Components/Information";
+import Login from "./New-Components/Login";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Wrapper } from "./New-Components/Wrapper";
+import RequestToBackEnd from "./New-Components/RequestToBackEnd";
+import { Post } from "./New-Components/Post";
+import { DeleteOperation } from "./New-Components/DeleteOperation";
+import "./Style.css";
+import { HomePage } from "./New-Components/HomePage";
+import { Tasks } from "./New-Components/Tasks";
+import { ClassComponent } from "./New-Components/ClassComponent";
 
-function App(props) {
+const data = [
+  {
+    id: "1",
+    filmName: "3 Idiots",
+    watched: true,
+  },
+  {
+    id: "2",
+    filmName: "Dangal",
+    watched: false,
+  },
+  {
+    id: "3",
+    filmName: "Bahubali",
+    watched: false,
+  },
+  {
+    id: "4",
+    filmName: "Money Heist",
+    watched: true,
+  },
+];
+
+function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Tasks />} />
-        <Route path="/new" element={<Task />} />
-        <Route path="/task/:id" element={<UpdateTask />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Info />} />
+          <Route path="/count" element={<Count />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/wrapper" element={<Wrapper />} />
+          <Route path="/request" element={<RequestToBackEnd />} />
+          <Route path="/request/:id" element={<Post />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/class" element={<ClassComponent />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
-
 export default App;
 
-// callback functn: a function which is being passed as an argument to another funct
-//HOC : its a component which accepts component/function as an argument and returns  another function/component
-//enhanced components :  whatver you are returning from the hoc its called as enhanced components
-
-// function add(m) {
-//   return function (n) {
-//     return m + n;
-//   };
-// }
-// console.log(add(7)(8));
-
-// export default connect(mapStateToProps)(Count);
+//callBackFunction : a function which is being passed as an argument to another function
+//Higher Order Components : a component which accepts component as an argument and returns component as a value

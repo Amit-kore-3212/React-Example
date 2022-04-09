@@ -1,7 +1,10 @@
+//getData : //setData
+//asynchronous operation;thunk : return one more function
+
 import axios from "axios";
 
 export const setData = (payload) => {
-  return { type: "FETCHDATA", payload: payload };
+  return { type: "BACKEND-DATA", payload: payload };
 };
 
 export const getData = () => {
@@ -16,4 +19,10 @@ export const getData = () => {
       });
   };
 };
-//thunk helps us to make an asynchronous operations
+
+export const loginInfo = (payload) => {
+  console.log("payload", payload);
+};
+
+//asynchronous
+//CRUD

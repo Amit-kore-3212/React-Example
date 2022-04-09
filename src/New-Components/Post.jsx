@@ -1,7 +1,5 @@
 import axios from "axios";
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export const Post = () => {
@@ -21,8 +19,15 @@ export const Post = () => {
   }, []);
   return (
     <div>
-      <h4>Posts</h4>
-      <h3>{post && post.body}</h3>
+      <h3>Posts</h3>
+      {post && (
+        <div>
+          <p>{post.userId}</p>
+          <p>{post.id}</p>
+          <p>{post.title}</p>
+          <p>{post.body}</p>
+        </div>
+      )}
     </div>
   );
 };

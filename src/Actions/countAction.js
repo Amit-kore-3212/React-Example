@@ -1,5 +1,5 @@
-export const incrementAction = () => {
-  return { type: "INCREMENT" };
+export const countAction = () => {
+  return { type: "AMIT" };
 };
 
 export const decrementAction = () => {

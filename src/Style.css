@@ -1,0 +1,63 @@
+.p {
+  color: #0072ff;
+  font-size: 18px;
+  font-family: "sans, serif";
+  font-weight: 600;
+}
+
+table,
+th {
+  border: 1px solid #232a35;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead {
+  background-color: #155cce;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+tbody {
+  background-color: aquamarine;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #155cce;
+}
+
+td {
+  height: 40px;
+}
+
+button {
+  width: 76px;
+  height: 30px;
+  background: #328eff;
+  border: 1px solid #328eff;
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.appContainer {
+  display: flex;
+  width: 100%;
+  background-color: #232a35;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  color: #ffff;
+}
