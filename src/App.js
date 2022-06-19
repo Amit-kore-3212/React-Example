@@ -1,60 +1,50 @@
 import React, { useState } from "react";
-import Count from "./New-Components/Count";
-import Info from "./New-Components/Information";
-import Login from "./New-Components/Login";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { Wrapper } from "./New-Components/Wrapper";
-import RequestToBackEnd from "./New-Components/RequestToBackEnd";
-import { Post } from "./New-Components/Post";
-import { DeleteOperation } from "./New-Components/DeleteOperation";
-import "./Style.css";
-import { HomePage } from "./New-Components/HomePage";
-import { Tasks } from "./New-Components/Tasks";
-import { ClassComponent } from "./New-Components/ClassComponent";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HeaderComponent } from "./Assignment/Components/Header";
+import { OrderManagement } from "./Assignment/Components/OrderMnagement";
+import { Count } from "./Components/Count";
+import { FilmName } from "./Components/FillmNames";
+import { SignUp } from "./Components/SignUp";
+import "./App.css";
+import { NewOrder } from "./Assignment/Components/NewOrder";
 
 const data = [
   {
-    id: "1",
-    filmName: "3 Idiots",
+    id: 1,
+    name: "3 Idiots",
     watched: true,
   },
   {
-    id: "2",
-    filmName: "Dangal",
+    id: 2,
+    name: "Bahubali2 ",
     watched: false,
   },
   {
-    id: "3",
-    filmName: "Bahubali",
+    id: 3,
+    name: "Money Heist",
     watched: false,
   },
   {
-    id: "4",
-    filmName: "Money Heist",
+    id: 4,
+    name: "K.G.F",
     watched: true,
   },
 ];
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Info />} />
-          <Route path="/count" element={<Count />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/wrapper" element={<Wrapper />} />
-          <Route path="/request" element={<RequestToBackEnd />} />
-          <Route path="/request/:id" element={<Post />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/class" element={<ClassComponent />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <div style={{ borderBottom: "1px solid #232a35" }}>
+        <HeaderComponent />
+      </div>
+      <Routes>
+        <Route path="/" element={<OrderManagement />} />
+        <Route path="/new-order" element={<NewOrder />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
-
-//callBackFunction : a function which is being passed as an argument to another function
-//Higher Order Components : a component which accepts component as an argument and returns component as a value
+//in react.js data flows only in one direction : from parent to child
+//3 : it should have accept props
+//how to update the state from child to parent : event handlers methods
